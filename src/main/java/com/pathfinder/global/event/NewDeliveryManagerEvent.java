@@ -7,7 +7,6 @@ import lombok.Getter;
 @Builder
 public class NewDeliveryManagerEvent {
     private String username;
-    private String email;
     private Long hubId;
     private String deliveryManagerType;
 }
