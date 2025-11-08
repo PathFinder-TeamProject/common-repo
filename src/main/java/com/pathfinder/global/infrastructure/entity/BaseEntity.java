@@ -46,8 +46,16 @@ public class BaseEntity {
 	@Column(name = "deleted_By")
 	private String deletedBy;
 
-	public void softDelete(Instant deletedAt, Long userId) {
+	public void setCreate(Instant createdAt, String username) {
+		this.createdAt = createdAt;
+		this.createdBy = username;
+	}
+    public void setModified(Instant deletedAt, String username) {
+		this.modifiedAt = deletedAt;
+		this.modifiedBy = username;
+	}
+    public void softDelete(Instant deletedAt, String username) {
 		this.deletedAt = deletedAt;
-		this.deletedBy = userId.toString();
+		this.deletedBy = username;
 	}
 }
